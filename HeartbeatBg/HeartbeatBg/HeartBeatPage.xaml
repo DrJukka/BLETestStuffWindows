@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="HeartbeatBg.HeartBeatPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:HeartbeatBg"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    RequestedTheme="Dark">
+
+  
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
+        <Grid x:Name="progressGrid"  HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible">
+            <local:ProgressRingWithText IsActive="True" Text="Waiting for data"></local:ProgressRingWithText>
+        </Grid>
+        <Grid x:Name="valuesGrid" Visibility="Collapsed">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <TextBlock x:Name="DeviceName"  TextWrapping="Wrap" Text="N/A"/>
+            <TextBlock x:Name="Value"  TextWrapping="Wrap" Text=""/>
+            <TextBlock x:Name="HeartbeatValueBox" FontFamily="fonts/DigitalDream.ttf#Digital Dream" FontSize="80" HorizontalAlignment="Center"/>
+        </StackPanel>
+
+        <Grid x:Name="outputGrid" Grid.Row="1">
+            <local:ChartControl x:Name="outputDataChart" HorizontalAlignment="Stretch" Height="300"/>
+        </Grid>
+        </Grid>
+    </Grid>
+</Page>
