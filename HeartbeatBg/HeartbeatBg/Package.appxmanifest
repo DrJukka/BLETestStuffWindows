@@ -33,6 +33,11 @@
             <Task Type="bluetooth" />
           </BackgroundTasks>
         </Extension>
+        <Extension Category="windows.backgroundTasks" EntryPoint="HeartbeatMonitor.BadgeNotificationHistoryChangedTriggerTask">
+          <BackgroundTasks>
+            <Task Type="systemEvent" />
+          </BackgroundTasks>
+        </Extension>
       </Extensions>
     </Application>
   </Applications>

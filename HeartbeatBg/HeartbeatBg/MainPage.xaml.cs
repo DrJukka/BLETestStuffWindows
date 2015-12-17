@@ -2,10 +2,13 @@
 using Common.Model;
 using System;
 using System.Collections.Generic;
+using Windows.Data.Xml.Dom;
 using Windows.ApplicationModel.Activation;
 using Windows.Devices.Bluetooth.GenericAttributeProfile;
 using Windows.Devices.Enumeration;
+using Windows.UI.Notifications;
 using Windows.UI.Popups;
+using Windows.UI.StartScreen;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -126,6 +129,11 @@ namespace HeartbeatBg
         {
             ReFreshDevicesList();
         }
+        private void setTile_Click(object sender, RoutedEventArgs e)
+        {
+            LiveTile.CreateSecoondaryTile();
+        }
+
 
         private async void ShowErrorDialog(string message, string title)
         {

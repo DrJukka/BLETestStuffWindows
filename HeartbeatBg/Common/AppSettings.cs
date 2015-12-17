@@ -11,6 +11,7 @@ namespace Common
         private static ushort defaultMinValue = 90;
         private static ushort defaultMaxValue = 170;
 
+        
         public static ushort MinHeartbeatValue
         {
             get

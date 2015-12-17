@@ -47,7 +47,16 @@ namespace HeartbeatFg
     
         private async void ReFreshDevicesList()
         {
-            var devices = await DeviceInformation.FindAllAsync(GattDeviceService.GetDeviceSelectorFromUuid(GattServiceUuids.HeartRate));
+            
+            System.Diagnostics.Debug.WriteLine("FindAllAsync hearth : " + GattServiceUuids.HeartRate);
+            System.Diagnostics.Debug.WriteLine("FindAllAsync hearth : " + GattDeviceService.GetDeviceSelectorFromUuid(GattServiceUuids.HeartRate));
+
+            String findStuff = "System.DeviceInterface.Bluetooth.ServiceGuid:= \"{0000180D-0000-1000-8000-00805F9B34FB}\" AND System.Devices.InterfaceEnabled:= System.StructuredQueryType.Boolean#True";
+
+            var devices = await DeviceInformation.FindAllAsync(findStuff);
+            
+            // this is the right way, stuff above is for debugging untill things works
+          //  var devices = await DeviceInformation.FindAllAsync(GattDeviceService.GetDeviceSelectorFromUuid(GattServiceUuids.HeartRate));
             var items = new List<DeviceViewModel>();
 
             if (devices != null && devices.Count > 0)
@@ -55,7 +64,7 @@ namespace HeartbeatFg
                 System.Diagnostics.Debug.WriteLine("FindAllAsync devices.Count : " + devices.Count);
                 foreach (DeviceInformation device in devices)
                 {
-                    if (device != null)
+                    if (device != null && device.Kind == DeviceInformationKind.DeviceInterface)
                     {
                         System.Diagnostics.Debug.WriteLine("Found : " + device.Name + ", id: " + device.Id);
                         items.Add(new DeviceViewModel(device));

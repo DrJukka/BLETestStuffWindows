@@ -10,6 +10,9 @@ namespace HeartbeatBg
         private static readonly string HeartbeatMonitorBackgroundTaskName       = "HeartbeatMonitorBackgroundTask";
         private static readonly string HeartbeatMonitorBackgroundTaskEntryPoint = "HeartbeatMonitor.HeartbeatMonitorBackgroundTask";
 
+        private static readonly string BadgeUpdateBackgroundTaskName            = "BadgeNotificationHistoryChangedTriggerTask";
+        private static readonly string BadgeUpdateBackgroundTaskEntryPoint      = "HeartbeatMonitor.BadgeNotificationHistoryChangedTriggerTask";
+
         private BackgroundManager()
         {
         }
@@ -28,6 +31,11 @@ namespace HeartbeatBg
             foreach (var taskValue in BackgroundTaskRegistration.AllTasks)
             {
                 if (taskValue.Value.Name.Equals(HeartbeatMonitorBackgroundTaskName))
+                {
+                    taskValue.Value.Unregister(true);
+                }
+
+                if (taskValue.Value.Name.Equals(BadgeUpdateBackgroundTaskName))
                 {
                     taskValue.Value.Unregister(true);
                 }
@@ -107,6 +115,23 @@ namespace HeartbeatBg
             {
                 System.Diagnostics.Debug.WriteLine("ERROR: Accessing your device failed." + Environment.NewLine + e.Message);
                 return "ERROR: Accessing your device failed." + Environment.NewLine + e.Message;
+            }
+
+            try
+            {
+                BackgroundTaskBuilder badgeUpdateTaskBuilder = new BackgroundTaskBuilder();
+                badgeUpdateTaskBuilder.Name = BadgeUpdateBackgroundTaskName;
+                badgeUpdateTaskBuilder.TaskEntryPoint = BadgeUpdateBackgroundTaskEntryPoint;
+
+                badgeUpdateTaskBuilder.SetTrigger(new ToastNotificationHistoryChangedTrigger());
+
+                BackgroundTaskRegistration backgroundTaskRegistration = badgeUpdateTaskBuilder.Register();
+                System.Diagnostics.Debug.WriteLine("BadgeUpdateBackgroundTaskName registred");
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine("BadgeNotification background failed to register. " + Environment.NewLine + e.Message);
+                return "BadgeNotification background failed to register" + Environment.NewLine + e.Message;
             }
 
             return null;

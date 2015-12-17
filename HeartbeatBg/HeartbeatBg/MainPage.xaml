@@ -51,6 +51,7 @@
             <StackPanel Grid.Row="0" HorizontalAlignment="Center"  VerticalAlignment="Top" Orientation="Horizontal" Margin="0,10,0,10">
                 <CommandBar VerticalAlignment="Bottom">
                     <AppBarButton Icon="Setting" Label="Setting" Click="settingsButton_Click"/>
+                    <AppBarButton Icon="SetTile" Label="Refresh" Click="setTile_Click"/>
                     <AppBarButton Icon="Refresh" Label="Refresh" Click="startButton_Click"/>
                 </CommandBar>
             </StackPanel>
