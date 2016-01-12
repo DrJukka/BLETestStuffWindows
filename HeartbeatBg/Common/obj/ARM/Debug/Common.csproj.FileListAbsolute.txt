@@ -1,0 +1,17 @@
+C:\a\BLETestStuffWindows\HeartbeatBg\Common\bin\ARM\Debug\Common.dll
+C:\a\BLETestStuffWindows\HeartbeatBg\Common\bin\ARM\Debug\Common.pdb
+C:\a\BLETestStuffWindows\HeartbeatBg\Common\bin\ARM\Debug\Common.pri
+C:\a\BLETestStuffWindows\HeartbeatBg\Common\obj\ARM\Debug\Common.dll
+C:\a\BLETestStuffWindows\HeartbeatBg\Common\obj\ARM\Debug\Common.pdb
+C:\a\BLETestStuffWindows\HeartbeatBg\Common\obj\ARM\Debug\priconfig.xml
+C:\a\BLETestStuffWindows\HeartbeatBg\Common\obj\ARM\Debug\priconfig.xml.intermediate
+C:\a\BLETestStuffWindows\HeartbeatBg\Common\obj\ARM\Debug\layout.resfiles
+C:\a\BLETestStuffWindows\HeartbeatBg\Common\obj\ARM\Debug\layout.resfiles.intermediate
+C:\a\BLETestStuffWindows\HeartbeatBg\Common\obj\ARM\Debug\resources.resfiles
+C:\a\BLETestStuffWindows\HeartbeatBg\Common\obj\ARM\Debug\resources.resfiles.intermediate
+C:\a\BLETestStuffWindows\HeartbeatBg\Common\obj\ARM\Debug\pri.resfiles
+C:\a\BLETestStuffWindows\HeartbeatBg\Common\obj\ARM\Debug\pri.resfiles.intermediate
+C:\a\BLETestStuffWindows\HeartbeatBg\Common\obj\ARM\Debug\qualifiers.txt
+C:\a\BLETestStuffWindows\HeartbeatBg\Common\obj\ARM\Debug\qualifiers.txt.intermediate
+C:\a\BLETestStuffWindows\HeartbeatBg\Common\obj\ARM\Debug\MultipleQualifiersPerDimensionFound.txt
+C:\a\BLETestStuffWindows\HeartbeatBg\Common\obj\ARM\Debug\Common.csprojResolveAssemblyReference.cache

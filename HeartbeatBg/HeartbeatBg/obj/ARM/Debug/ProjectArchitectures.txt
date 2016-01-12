@@ -1,0 +1,4 @@
+C:\a\BLETestStuffWindows\HeartbeatBg\Common\Common.csproj;arm
+C:\a\BLETestStuffWindows\HeartbeatBg\Common\Common.csproj;arm
+C:\a\BLETestStuffWindows\HeartbeatBg\HeartbeatBg\HeartbeatBg.csproj;arm
+C:\a\BLETestStuffWindows\HeartbeatBg\HeartbeatMonitor\HeartbeatMonitor.csproj;arm

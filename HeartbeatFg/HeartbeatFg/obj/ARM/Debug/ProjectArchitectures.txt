@@ -1,0 +1,1 @@
+C:\a\BLETestStuffWindows\HeartbeatFg\HeartbeatFg\HeartbeatFg.csproj;arm
