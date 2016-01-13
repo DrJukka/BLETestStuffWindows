@@ -27,6 +27,7 @@
     <Capability Name="internetClientServer" />
     <Capability Name="privateNetworkClientServer" />
     <DeviceCapability Name="proximity" />
+    <DeviceCapability Name="bluetooth" />
     <DeviceCapability Name="bluetooth.rfcomm">
       <Device Id="any">
         <Function Type="name:serialPort" />

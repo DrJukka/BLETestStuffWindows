@@ -9,6 +9,7 @@ using Windows.Foundation;
 using Windows.System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Windows.Devices.Bluetooth;
 
 namespace BluetoothApp.Engine
 {
@@ -225,7 +226,7 @@ namespace BluetoothApp.Engine
         {   
             try {
 
-                var attributes = await service.GetSdpRawAttributesAsync();
+                var attributes = await service.GetSdpRawAttributesAsync(BluetoothCacheMode.Uncached);
                 if (!attributes.ContainsKey(SERVICE_NAME_ATTRIBUTE_ID))
                 {
                     System.Diagnostics.Debug.WriteLine("Name attribute not found");
