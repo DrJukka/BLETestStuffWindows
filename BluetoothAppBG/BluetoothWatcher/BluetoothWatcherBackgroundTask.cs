@@ -72,6 +72,8 @@ namespace BluetoothWatcher
         {
             while (true)
             {
+                Debug.WriteLine("start reading");
+
                 uint readLength = await reader.LoadAsync(sizeof(uint));
                 if (readLength < sizeof(uint))
                 {
@@ -79,6 +81,8 @@ namespace BluetoothWatcher
                     deferral.Complete();
                 }
                 uint currentLength = reader.ReadUInt32();
+
+                Debug.WriteLine("message lenght " + currentLength);
 
                 readLength = await reader.LoadAsync(currentLength);
                 if (readLength < currentLength)
