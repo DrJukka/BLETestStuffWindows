@@ -56,12 +56,12 @@ namespace BluetoothAppBG
             if (BackgroundManager.IsBackgroundTaskRegistered())
             {
                 BackgroundManager.UnregisterBackgroundTask();
-                BackgroundManager.RegisterBackgroundTaskEventHandlers(_taskCompletedHandler, _progressEventHandler);
+                BackgroundManager.UnRegisterBackgroundTaskEventHandlers(_taskCompletedHandler, _progressEventHandler);
             }
             else
             {
                 await BackgroundManager.RegisterBackgroundTask(CommonData.GUID, CommonData.ServiceName, CommonData.ServiceDescriptor);
-                BackgroundManager.UnRegisterBackgroundTaskEventHandlers(_taskCompletedHandler, _progressEventHandler);
+                BackgroundManager.RegisterBackgroundTaskEventHandlers(_taskCompletedHandler, _progressEventHandler);
             }
 
             updateBGStatus();
