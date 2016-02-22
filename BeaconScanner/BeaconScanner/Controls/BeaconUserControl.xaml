@@ -1,0 +1,105 @@
+﻿<UserControl
+    x:Class="BeaconScanner.Controls.BeaconUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BeaconScanner.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Border BorderBrush="#F8F8F8" BorderThickness="1" >
+            <Border BorderBrush="#E4E4E4" BorderThickness="1">
+                <Border BorderBrush="#949494" BorderThickness="1">
+                    <StackPanel Margin="8,8,8,8">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock
+					            Style="{StaticResource BodyTextBlockStyle}"
+					            Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+					            Text="Distance:" />
+                           <TextBlock
+                                Grid.Column="1"
+                                Margin="6,0,0,0"
+					            Style="{StaticResource BodyTextBlockStyle}"
+					            Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}">
+					            <Run Text="{Binding Distance, FallbackValue='0.0'}" />
+                                <Run Text="m (SS:" />
+                                <Run Text="{Binding RawSignalStrengthInDBm, FallbackValue='0'}" />
+                                <Run Text="; MP:" />
+                                <Run Text="{Binding MeasuredPower, FallbackValue='0'}" />
+                                <Run Text=")" />
+                            </TextBlock>
+                        </Grid>
+                        <TextBlock
+                            Style="{StaticResource BodyTextBlockStyle}"
+                            Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+                            Text="{Binding Id1, FallbackValue='de305d54-75b4-431b-adb2-eb6b9e546014'}" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width=".5*" />
+                                    <ColumnDefinition Width=".5*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                <TextBlock
+						            Grid.Column="0"
+						            Style="{StaticResource BodyTextBlockStyle}"
+						            Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+						            Text="ID 2:" />
+                                <TextBlock
+						            Grid.Column="1"
+                                    Margin="6,0,0,0"
+						            Style="{StaticResource BodyTextBlockStyle}"
+						            Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+						            Text="{Binding Id2, FallbackValue=1234}" />
+                                </Grid>
+                                <Grid Grid.Column="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                <TextBlock
+						            Grid.Column="0"
+						            Style="{StaticResource BodyTextBlockStyle}"
+						            Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+						            Text="ID 3:" /> 
+                                <TextBlock
+						            Grid.Column="1"
+                                    Margin="6,0,0,0"
+						            Style="{StaticResource BodyTextBlockStyle}"
+						            Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}"
+						            Text="{Binding Id3, FallbackValue=5678}" />
+                                </Grid>
+                            </Grid>
+                        <TextBlock
+                            Style="{StaticResource BodyTextBlockStyle}"
+                            Foreground="{ThemeResource SystemControlForegroundBaseHighBrush}">
+                        <Run Text="Last seen" />
+                        <Run Text="{Binding SecondsElapsedSinceLastSeen, FallbackValue=0}" />
+                        <Run Text="second(s) ago" />
+                        </TextBlock>
+                        <Border BorderBrush="#F8F8F8" BorderThickness="1">
+                            <Border BorderBrush="#E4E4E4" BorderThickness="1">
+                                <local:DiscoveryResultControl  Results="{Binding DiscoveryTestData}" HorizontalAlignment="Stretch" Height="40"></local:DiscoveryResultControl>
+                            </Border>
+                        </Border>
+                    </StackPanel>
+                </Border>
+            </Border>
+        </Border>
+    </Grid>
+</UserControl>
