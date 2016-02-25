@@ -44,11 +44,20 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0"  HorizontalAlignment="Center" Text="Results" FontSize="25" Margin="8,8,8,8"></TextBlock>
-                <local:BeaconUserControl Grid.Row="1" x:Name="beaconResultControl" Margin="8,8,8,8"/>
-                <ScrollViewer HorizontalScrollBarVisibility="Auto" Grid.Row="2">
+                <StackPanel Grid.Row="1">
+                    <TextBlock FontSize="20">UUID</TextBlock>
+                    <TextBlock x:Name="uidValueBox" FontSize="20" Margin="20,4,4,4"></TextBlock>
+                </StackPanel >
+                <Border Grid.Row="2" BorderBrush="#F8F8F8" BorderThickness="1" Margin="12,8,12,8">
+                    <Border BorderBrush="#E4E4E4" BorderThickness="1">
+                        <local:DiscoveryResultControl x:Name="discoveryResultControl" HorizontalAlignment="Stretch" Height="40"></local:DiscoveryResultControl>
+                    </Border>
+                </Border>
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" Grid.Row="3">
                     <StackPanel >
                         <TextBlock FontSize="20">Listening cycle</TextBlock>
                         <TextBlock x:Name="listeningCycleBox" FontSize="20" Margin="20,4,4,4"></TextBlock>

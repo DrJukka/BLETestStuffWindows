@@ -237,7 +237,8 @@ namespace BeaconScanner
             }
 
             resultOverlay.Visibility = Visibility.Visible;
-            beaconResultControl.DataContext = selectedBeacon;
+            uidValueBox.Text = selectedBeacon.Id1;
+            discoveryResultControl.Results = selectedBeacon.DiscoveryTestData;
 
             int successvalues = 0;
             int failedvalues = 0;
