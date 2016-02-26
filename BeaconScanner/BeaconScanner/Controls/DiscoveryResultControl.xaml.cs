@@ -26,7 +26,10 @@ namespace BeaconScanner.Controls
   
         public bool[] Results
         {
-            get { return (bool[])GetValue(ResultsArrayProperty); }
+            get {
+                var ret = GetValue(ResultsArrayProperty);
+                    return (bool[])ret;
+            }
             set
             {
                 SetValue(ResultsArrayProperty, value);
@@ -35,7 +38,7 @@ namespace BeaconScanner.Controls
         }
 
         public static readonly DependencyProperty ResultsArrayProperty =
-            DependencyProperty.Register("Results", typeof(bool[]), typeof(DiscoveryResultControl), new PropertyMetadata(false));
+            DependencyProperty.Register("Results", typeof(bool[]), typeof(DiscoveryResultControl), new PropertyMetadata(new bool[100]));
 
         private CanvasRenderTarget _offscreenBackGround = null;
 
